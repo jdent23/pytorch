@@ -242,14 +242,15 @@ void ProcessGroupMPI::initMPIOnce() {
         TORCH_CHECK(false, "Fail to register the MPI exit handler");
       }
     }
-
-    if (mpiThreadSupport_ < MPI_THREAD_SERIALIZED) {
+/*
+    if (mpiThreadSupport_ < MPI_THREAD_MULTIPLE) {
       TORCH_CHECK(false,
 	    "Used MPI implementation doesn't have the "
 	    "minimum level of threading support: "
-	    "MPI_THREAD_SERIALIZED. This is required by "
+	    "MPI_THREAD_MULTIPLE. This is required by "
 	    "c10d package");
     }
+*/
   });
 }
 
